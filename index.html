@@ -3,36 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game of Life Playground</title>
+    <title>Game of Life | Experiment Lab</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
     <style>
-        body { margin: 0; overflow: hidden; background: #0b0e14; font-family: sans-serif; }
-        .hud {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            background: rgba(0, 0, 0, 0.7);
-            color: #00ffd1;
-            padding: 15px;
-            border-radius: 8px;
-            pointer-events: auto;
-            border: 1px solid #333;
-            transition: opacity 0.3s;
+        body { margin: 0; display: flex; background: #0b0e14; color: #eee; font-family: 'Inter', sans-serif; overflow: hidden; }
+        
+        #controls {
+            width: 250px;
+            background: #161b22;
+            padding: 20px;
+            border-right: 1px solid #30363d;
+            height: 100vh;
+            box-sizing: border-box;
+            z-index: 10;
         }
-        .hud:hover { opacity: 1; }
-        .controls { display: flex; flex-direction: column; gap: 10px; margin-top: 10px; }
-        kbd { background: #333; padding: 2px 4px; border-radius: 3px; color: white; }
+
+        #canvas-holder {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #000;
+        }
+
+        h2 { color: #00ffd1; font-size: 1.2rem; margin-top: 0; }
+        .hint { font-size: 0.8rem; color: #8b949e; margin-bottom: 20px; }
+        kbd { background: #30363d; padding: 2px 5px; border-radius: 4px; font-family: monospace; }
     </style>
 </head>
 <body>
-    <div class="hud">
-        <h2 style="margin:0 0 10px 0; font-size: 18px;">Conway's Playground</h2>
-        <div class="controls">
-            <span><kbd>Click/Drag</kbd> to Spawn</span>
-            <span><kbd>R</kbd> to Reset</span>
-            <span><kbd>SPACE</kbd> to Pause/Play</span>
+
+    <div id="controls">
+        <h2>Experiment Lab</h2>
+        <p class="hint">Testing emergent complexity inspired by Veritasium.</p>
+        
+        <div style="margin-top:30px;">
+            <p><kbd>SPACE</kbd> Pause/Play</p>
+            <p><kbd>R</kbd> Reset Grid</p>
+            <p><kbd>C</kbd> Clear All</p>
+            <p><strong>Drag Mouse</strong> to draw life</p>
         </div>
     </div>
+
+    <div id="canvas-holder"></div>
+
     <script src="sketch.js"></script>
 </body>
 </html>
