@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game of Life Playground</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <style>
+        body { margin: 0; overflow: hidden; background: #0b0e14; font-family: sans-serif; }
+        .hud {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            color: #00ffd1;
+            padding: 15px;
+            border-radius: 8px;
+            pointer-events: auto;
+            border: 1px solid #333;
+            transition: opacity 0.3s;
+        }
+        .hud:hover { opacity: 1; }
+        .controls { display: flex; flex-direction: column; gap: 10px; margin-top: 10px; }
+        kbd { background: #333; padding: 2px 4px; border-radius: 3px; color: white; }
+    </style>
+</head>
+<body>
+    <div class="hud">
+        <h2 style="margin:0 0 10px 0; font-size: 18px;">Conway's Playground</h2>
+        <div class="controls">
+            <span><kbd>Click/Drag</kbd> to Spawn</span>
+            <span><kbd>R</kbd> to Reset</span>
+            <span><kbd>SPACE</kbd> to Pause/Play</span>
+        </div>
+    </div>
+    <script src="sketch.js"></script>
+</body>
+</html>
